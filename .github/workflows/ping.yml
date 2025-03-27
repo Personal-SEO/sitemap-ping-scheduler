@@ -1,15 +1,34 @@
-name: Sitemap Ping
+name: Ping Multiple Sitemaps
 
 on:
   schedule:
-    - cron: '0 1 * * *' # Every night at 1:00 AM UTC
-  workflow_dispatch: # Allow manual trigger
+    - cron: '0 1 * * *' # Every night at 1 AM UTC
+  workflow_dispatch:
 
 jobs:
   ping:
     runs-on: ubuntu-latest
     steps:
-      - name: Ping Google & Bing with Sitemap
+      - name: Ping all sitemap URLs
         run: |
-          curl "https://www.google.com/ping?sitemap=https://www.yourdomain.com/sitemap.xml"
-          curl "https://www.bing.com/ping?sitemap=https://www.yourdomain.com/sitemap.xml"
+          set -e
+          SITEMAPS=(
+            "https://www.koitzgroup.com/property-search/sitemap.xml?searchid=2572648"
+            "https://www.koitzgroup.com/property-search/sitemap.xml?searchid=2572651"
+            "https://www.koitzgroup.com/property-search/sitemap.xml?searchid=2572662"
+            "https://www.koitzgroup.com/property-search/sitemap.xml?searchid=2572664"
+            "https://www.koitzgroup.com/property-search/sitemap.xml?searchid=2572665"
+            "https://www.askcathy.com/property-search/sitemap.xml?searchid=5197341"
+            "https://www.askcathy.com/property-search/sitemap.xml?searchid=5197335"
+            "https://www.askcathy.com/property-search/sitemap.xml?searchid=5197332"
+            "https://www.askcathy.com/property-search/sitemap.xml?searchid=5197330"
+          )
+
+          for URL in "${SITEMAPS[@]}"
+          do
+            echo "🔄 Pinging Google: $URL"
+            curl -s -o /dev/null -w "Google Status: %{http_code}\n" "https://www.google.com/ping?sitemap=$URL"
+
+            echo "🔄 Pinging Bing: $URL"
+            curl -s -o /dev/null -w "Bing Status: %{http_code}\n" "https://www.bing.com/ping?sitemap=$URL"
+          done
