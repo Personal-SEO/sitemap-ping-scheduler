@@ -1,0 +1,15 @@
+name: Sitemap Ping
+
+on:
+  schedule:
+    - cron: '0 1 * * *' # Every night at 1:00 AM UTC
+  workflow_dispatch: # Allow manual trigger
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping Google & Bing with Sitemap
+        run: |
+          curl "https://www.google.com/ping?sitemap=https://www.yourdomain.com/sitemap.xml"
+          curl "https://www.bing.com/ping?sitemap=https://www.yourdomain.com/sitemap.xml"
