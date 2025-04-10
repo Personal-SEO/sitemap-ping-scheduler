@@ -11,23 +11,24 @@ jobs:
     steps:
       - name: Checkout repo
         uses: actions/checkout@v3
-        
-      - name: Debug - Check workflow directory
+
+      # Debug step to verify the file exists
+      - name: Debug - Check sitemaps.txt
         run: |
           echo "Current directory: $(pwd)"
           ls -la .github/workflows/  # List files in the workflow directory
+          cat .github/workflows/sitemaps.txt  # Show file contents
 
-      - name: Debug - Show sitemap file content
-        run: cat .github/workflows/sitemaps.txt
+      # Main step to ping sitemaps
       - name: Ping all sitemap URLs from file
         run: |
           while IFS= read -r URL
           do
             echo "🔄 Pinging Google: $URL"
             curl -s -o /dev/null -w "Google Status: %{http_code}\n" "https://www.google.com/ping?sitemap=$URL"
-
+            
             echo "🔄 Pinging Bing: $URL"
             curl -s -o /dev/null -w "Bing Status: %{http_code}\n" "https://www.bing.com/ping?sitemap=$URL"
-
+            
             sleep 1  # optional: be polite
-           done < .github/workflows/sitemaps.txt  # Update path here
+          done < .github/workflows/sitemaps.txt  # Use full path here
