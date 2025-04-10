@@ -23,4 +23,4 @@ jobs:
             curl -s -o /dev/null -w "Bing Status: %{http_code}\n" "https://www.bing.com/ping?sitemap=$URL"
 
             sleep 1  # optional: be polite
-          done < sitemaps.txt
+           done < .github/workflows/sitemaps.txt  # Update path here
