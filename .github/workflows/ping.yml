@@ -11,7 +11,14 @@ jobs:
     steps:
       - name: Checkout repo
         uses: actions/checkout@v3
+        
+      - name: Debug - Check workflow directory
+        run: |
+          echo "Current directory: $(pwd)"
+          ls -la .github/workflows/  # List files in the workflow directory
 
+      - name: Debug - Show sitemap file content
+        run: cat .github/workflows/sitemaps.txt
       - name: Ping all sitemap URLs from file
         run: |
           while IFS= read -r URL
