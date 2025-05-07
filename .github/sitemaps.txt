@@ -60,8 +60,6 @@ https://www.tuscanaproperties.com/property-search/sitemap.xml?searchid=3282797
 https://www.tuscanaproperties.com/property-search/sitemap.xml?searchid=3282799
 https://www.tuscanaproperties.com/property-search/sitemap.xml?searchid=3282800
 https://www.tuscanaproperties.com/property-search/sitemap.xml?searchid=3282801
-https://www.anuraghomes.ca/property-search/sitemap.xml?searchid=3226547
-https://www.anuraghomes.ca/property-search/sitemap.xml?searchid=3226538
 https://www.agentsonmain.com/property-search/sitemap.xml?searchid=2282881
 https://www.agentsonmain.com/property-search/sitemap.xml?searchid=2282882
 https://www.agentsonmain.com/property-search/sitemap.xml?searchid=2282883
@@ -122,3 +120,18 @@ https://www.farrgroupnw.com/property-search/sitemap.xml?searchid=1495863
 https://www.farrgroupnw.com/property-search/sitemap.xml?searchid=1495861
 https://www.farrgroupnw.com/property-search/sitemap.xml?searchid=1495857
 https://www.farrgroupnw.com/property-search/sitemap.xml?searchid=1495859
+https://www.swflregroup.com/agent.xml
+https://www.swflregroup.com/general.xml
+https://www.swflregroup.com/guide.xml
+https://www.swflregroup.com/listing.xml
+https://www.swflregroup.com/listing10.xml
+https://www.swflregroup.com/listing11.xml
+https://www.swflregroup.com/listing2.xml
+https://www.swflregroup.com/listing3.xml
+https://www.swflregroup.com/listing4.xml
+https://www.swflregroup.com/listing5.xml
+https://www.swflregroup.com/listing6.xml
+https://www.swflregroup.com/listing7.xml
+https://www.swflregroup.com/listing8.xml
+https://www.swflregroup.com/listing9.xml
+https://www.swflregroup.com/neighborhood.xml
